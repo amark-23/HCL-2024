@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:namer_app/widgets/custom_button.dart'; // Import your custom button
+import '../widgets/custom_button.dart'; // Import your custom button
 
 class AddContentPage extends StatefulWidget {
   const AddContentPage({Key? key}) : super(key: key);
@@ -118,12 +118,8 @@ class _AddContentPageState extends State<AddContentPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      IconButton(
-                        icon: const Icon(
-                          Icons.arrow_back,
-                          color: Colors.white,
-                        ),
-                        onPressed: () {
+                      GestureDetector(
+                        onTap: () {
                           if (_isImageDisplayed) {
                             // Return to camera preview when an image is displayed
                             setState(() {
@@ -136,12 +132,27 @@ class _AddContentPageState extends State<AddContentPage> {
                                 context); // Navigate to the previous page
                           }
                         },
+                        child: Container(
+                          padding: const EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.7),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: const Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal:
-                                70.0), // Adjust title offset dynamically
-                        child: Text(
+                      const Spacer(),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16.0, vertical: 8.0),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.7),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        child: const Text(
                           'Add Content',
                           style: TextStyle(
                             fontSize: 18,
@@ -149,7 +160,8 @@ class _AddContentPageState extends State<AddContentPage> {
                             color: Colors.white,
                           ),
                         ),
-                      ), // Ensure proper centering of the title
+                      ),
+                      const Spacer(),
                     ],
                   ),
                 ),
