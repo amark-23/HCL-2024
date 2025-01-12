@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "969400001537",
+    "project_id": "concurro-d2377",
+    "storage_bucket": "concurro-d2377.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969400001537:android:6048ecddc901469709cc00",
+        "android_client_info": {
+          "package_name": "com.example.concurro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMcq7iluV0p8uwqthS9QDy4XstXwylvRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

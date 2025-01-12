@@ -1,0 +1,44 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services" // Firebase plugin
+}
+
+android {
+    namespace = "com.example.concurro"
+    compileSdk = 34 // Ensure Firebase compatibility
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.concurro"
+        minSdk = 23 // Ensure it's 21 or higher for Firebase
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:33.7.0') // Firebase BOM
+    implementation 'com.google.firebase:firebase-analytics' // Example Firebase dependency
+    // Add other Firebase dependencies as needed
+}
